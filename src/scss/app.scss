@@ -1,5 +1,3 @@
-$rojo: purple;
+@use "base";
+@use "contenido";
 
-body{
-    background-color: $rojo;
-}
