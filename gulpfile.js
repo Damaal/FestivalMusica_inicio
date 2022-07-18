@@ -17,7 +17,7 @@ function css(done){
 
 function dev(done){
     watch("src/scss/app.scss", css); //qué archivo mirar y qué hacer cuando cambie.
-    done();
+    done(); ///callback para gulp, tarea finalizada.
 }
 
 
