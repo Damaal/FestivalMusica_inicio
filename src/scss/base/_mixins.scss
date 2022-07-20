@@ -1,0 +1,47 @@
+/* Los mixins son útiles para elementos que van a tener código muy repetetivo, como por ekemplo
+   botones o @media query */
+
+@use "variables" as v;
+
+@mixin heading {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: black;
+    letter-spacing: 1px;
+}
+
+/* Tambien es posible crear mixins que tomen parámetros */
+
+@mixin headingparam($color:blue, $br: false) { // Por defecto AZUL / FALSE, si no se le pasa parámetros
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color;
+    letter-spacing: 1px;
+
+    @if $br { // Estructuras de control como IF también son posibles
+        border-radius: 1rem;
+    }
+} // Para utilizar un mixin: @include m.heading(color, br);
+
+
+// Mixins para Media Queries
+@mixin telefono { 
+    @media(min-width: v.$telefono) {
+        @content;
+    }
+}
+@mixin tablet { 
+    @media(min-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin desktop { 
+    @media(min-width: v.$desktop) {
+        @content;
+    }
+}
+@mixin desktopXL { 
+    @media(min-width: v.$desktopXL) {
+        @content;
+    }
+} /* Para utilizarlos: @include mixins.desktopXL { ...estilo... } */
