@@ -13,6 +13,7 @@ body{
 p{
     font-size: 2rem;
     columns: v.$negro;
+    line-height: 1.5;
 }
 .contenedor{
     width: 95%;
@@ -33,4 +34,9 @@ h2{
 }
 h3{
     font-size: 3rem;
+}
+
+img{
+    max-width: 100%;
+    display: block;
 }
